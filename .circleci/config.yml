@@ -12,7 +12,8 @@ jobs:
     steps:
       # Commands are run in a Windows virtual machine environment
       - checkout
-      - run: npx cypress run
+      - run: choco install googlechrome
+      - run: npx cypress run --spec cypress\integration\examples\actions.spec.js --browser chrome
 workflows:
   build:
     jobs:
